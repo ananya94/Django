@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Course List</title>
+  </head>
+  <body>
+    {% block content %}
+    <div>
+      {% for course in courses %}
+      <header><a href="{% url 'courses:detail' pk=course.pk %}">{{course.title}}</a></header>
+      {{course.description}}
+      {% endfor %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
